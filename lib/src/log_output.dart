@@ -4,6 +4,10 @@ import 'log_filter.dart';
 import 'log_printer.dart';
 import 'output_event.dart';
 
+/// This can be an output stream, a file or a network target or console
+/// i.e. [DeveloperConsoleOutput].
+/// [LogOutput] may cache multiple log messages.
+/// Each output stream has its own [LogFilter] and [LogPrinter]
 abstract class LogOutput {
   final LogFilter filter;
   final LogPrinter printer;
@@ -31,7 +35,7 @@ abstract class LogOutput {
 class DeveloperConsoleOutput extends LogOutput {
   DeveloperConsoleOutput()
       : super(
-          filter: LogAll(),
+          filter: LogAllFliter(),
           printer: ConsolePrinter(),
         );
 

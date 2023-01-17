@@ -3,6 +3,10 @@ import 'dart:convert';
 import 'level.dart';
 import 'log_event.dart';
 
+/// An abstract handler of log events.
+///
+/// A log printer creates and formats the output, which is then sent to
+/// [LogOutput]. e.g: [ConsolePrinter]
 abstract class LogPrinter {
   void init() {}
   List<String> log(LogEvent event);

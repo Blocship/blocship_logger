@@ -2,6 +2,7 @@ import 'level.dart';
 import 'log_event.dart';
 import 'log_output.dart';
 
+/// To use, create a global instance.
 class Logger {
   final List<LogOutput> delegates;
 
